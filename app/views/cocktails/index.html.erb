@@ -1,0 +1,9 @@
+<div class="container">
+<% @cocktails.each do |cocktail| %>
+  <h2><%= cocktail.name %></h2>
+   <p></p>
+  <p><i class="fas fa-search-plus"></i><%= link_to "More details", cocktail_path(cocktail) %></p>
+<% end %>
+
+  <p><i class="fas fa-cocktail"></i> <%= link_to "Add new cocktail", new_cocktail_path %></p>
+</div><
