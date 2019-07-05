@@ -1,5 +1,6 @@
+<%=  cl_image_tag("xwwovhrw6xrjnqxbnqfx.jpg", crop: :fill, :class => "back-index" )%>
+<div class="back-index">
 <div class="container">
-
 <div class="row">
 <% @cocktails.each do |cocktail| %>
   <div class="col-lg-4 d-flex align-items-stretch">
@@ -8,12 +9,21 @@
     <div class="card-body">
     <h2><%= cocktail.name %></h2>
    <p></p>
-  <div class="card-link"><i class="fas fa-search-plus"></i><%= link_to "More details", cocktail_path(cocktail) %></p>
+  <div class="card-link"><%= link_to cocktail_path(cocktail) do %>
+                                    <i class="fas fa-search-plus"></i>                <span>More details</span>
+        <% end %>
     </div>
 </div>
 </div>
 </div>
 <% end %>
 </div>
-  <p><i class="fas fa-cocktail"></i> <%= link_to "Add new cocktail", new_cocktail_path %></p>
-</div><
+<br>
+<br>
+<br>
+   <%= link_to new_cocktail_path do %>
+              <i class="fas fa-cocktail"></i>  <span>Add new cocktail</span>
+              <% end %>
+
+</div>
+</div>
